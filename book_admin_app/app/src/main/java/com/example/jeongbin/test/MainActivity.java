@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 try{
                     id = (EditText)findViewById(R.id.main_id_edit);
                     passwd = (EditText)findViewById(R.id.main_passwd_edit);
-                    PHPRequest request = new PHPRequest("http://114.70.93.130/test/login/login.php");
+                    PHPRequest request = new PHPRequest("http://114.70.93.130/book_admin/login/login.php");
                     String result = request.PhPjoin(String.valueOf(id.getText()),String.valueOf(passwd.getText()));
                     if(result.equals("-1")){
                         Toast.makeText(getApplication(), "로그인에 실패하였습니다.",Toast.LENGTH_SHORT).show();
@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
                         login_factory = result;
                         Toast.makeText(getApplication(), login_factory + " 환영합니다.",Toast.LENGTH_SHORT).show();
                         Intent login_intent = new Intent(MainActivity.this, LoginActivity.class);
+                        login_intent.putExtra("factory",login_factory);
+                        login_intent.putExtra("id",String.valueOf(id.getText()));
                         startActivity(login_intent);
                     }
 

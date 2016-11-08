@@ -23,29 +23,13 @@
         android:id="@+id/login_loan_view" />
 
     <TextView
-        android:text="대출 요청 현황"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_loan_view"
-        android:layout_alignStart="@+id/login_loan_view"
-        android:id="@+id/login_loan_call_text" />
-
-    <TextView
         android:text="대출 요쳥 현황"
         android:textSize="12pt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/login_loan_call_text"
         android:layout_alignStart="@+id/login_loan_call_text"
-        android:id="@+id/login_loar_call_view" />
-
-    <TextView
-        android:text="반납 요청 현황"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_loar_call_view"
-        android:layout_alignStart="@+id/login_loar_call_view"
-        android:id="@+id/login_return_text" />
+        android:id="@+id/login_loan_call_view" />
 
     <TextView
         android:text="반납 요청 현황"
@@ -55,4 +39,63 @@
         android:layout_below="@+id/login_return_text"
         android:layout_alignStart="@+id/login_return_text"
         android:id="@+id/login_return_view" />
+
+    <TextView
+        android:text="대출 요청 현황"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_loan_call_text"
+        android:layout_below="@+id/login_loan_view"
+        android:layout_alignStart="@+id/login_loan_view"
+        android:layout_marginTop="11dp" />
+
+    <TextView
+        android:text="반납 요청 현황"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_return_text"
+        android:layout_below="@+id/login_loan_call_view"
+        android:layout_alignStart="@+id/login_loan_call_view"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:text="대출 요청 현황 확인"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_loancall_state_btn"
+        android:layout_below="@+id/login_loan_state_btn"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="대출 현황 확인"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_loan_state_btn"
+        android:layout_below="@+id/login_book_del_btn"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="책 삭제"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_book_del_btn"
+        android:layout_below="@+id/login_book_add_btn"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="반납 요청 현황"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_loancall_state_btn"
+        android:layout_alignParentStart="true"
+        android:id="@+id/login_return_state_btn" />
+
+    <Button
+        android:text="책 추가"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:id="@+id/login_book_add_btn"
+        android:layout_below="@+id/login_return_view"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

@@ -37,7 +37,7 @@ public class JoinActivity extends AppCompatActivity {
                         return;
                     }
 
-                    PHPRequest request = new PHPRequest("http://114.70.93.130/test/join/join.php");
+                    PHPRequest request = new PHPRequest("http://114.70.93.130/book_admin/join/join.php");
                     String result = request.PhPjoin(String.valueOf(id.getText()),String.valueOf(passwd.getText()),String.valueOf(factory.getText()));
                     if(result.equals("1")){
                         Toast.makeText(getApplication(),"회원가입 성공",Toast.LENGTH_SHORT).show();
@@ -62,7 +62,7 @@ public class JoinActivity extends AppCompatActivity {
                         Toast.makeText(JoinActivity.this, "아이디를 입력해주세요.", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    PHPRequest request = new PHPRequest("http://114.70.93.130/test/join/join_id_confirm.php");
+                    PHPRequest request = new PHPRequest("http://114.70.93.130/book_admin/join/join_id_confirm.php");
                     String result = request.PhPjoin(String.valueOf(id.getText()));
                     if(result.equals("1")){
                         Toast.makeText(getApplication(), "아이디가 사용가능합니다.", Toast.LENGTH_SHORT).show();
