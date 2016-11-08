@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="이름"
+        android:textSize="15pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="25dp"
+        android:id="@+id/myloan_name"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="13dp"
+        android:id="@+id/myloan_name_edit"
+        android:hint="이름을 입력하세요"
+        android:layout_below="@+id/myloan_name"
+        android:layout_alignStart="@+id/myloan_name" />
+
+    <TextView
+        android:text="생년월일"
+        android:textSize="15pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/myloan_birthday"
+        android:layout_below="@+id/myloan_name_edit"
+        android:layout_alignStart="@+id/myloan_name_edit" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:layout_marginTop="18dp"
+        android:id="@+id/myloan_phone_edit"
+        android:hint="-빼고 입력하세요"
+        android:layout_below="@+id/myloan_phone"
+        android:layout_alignStart="@+id/myloan_phone" />
+
+    <TextView
+        android:text="휴대폰 번호"
+        android:textSize="15pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/myloan_phone"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/myloan_birthday_edit"
+        android:layout_alignStart="@+id/myloan_birthday_edit" />
+
+    <Button
+        android:text="대출현황 검색"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/myloan_search_btn"
+        android:layout_marginBottom="42dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/myloan_birthday_edit"
+        android:hint="주민등록번호 앞6자리"
+        android:layout_below="@+id/myloan_birthday"
+        android:layout_alignStart="@+id/myloan_birthday"
+        android:layout_marginTop="10dp" />
+</RelativeLayout>

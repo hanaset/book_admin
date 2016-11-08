@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollIndicators="right"
+    android:scrollbarAlwaysDrawHorizontalTrack="true"
+    android:scrollbarStyle="insideInset">
+
+    <Button
+        android:text="중 복 확 인"
+        android:textSize="5pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/join_join_confirm"
+        android:layout_above="@+id/join_id_edit"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="23dp"
+        android:layout_alignTop="@+id/join_id" />
+
+    <TextView
+        android:text="ID"
+        android:textSize="12pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/join_id"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/join_id_edit"
+        android:hint="영문,숫자 8~12글자"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/join_id"
+        android:layout_alignStart="@+id/join_id" />
+
+    <TextView
+        android:text="Password"
+        android:textSize="12pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/join_passwd"
+        android:layout_below="@+id/join_id_edit"
+        android:layout_alignStart="@+id/join_id_edit"
+        android:layout_marginTop="23dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/join_passwd_edit"
+        android:hint="영문,숫자 8~12글자"
+        android:layout_below="@+id/join_passwd"
+        android:layout_alignStart="@+id/join_passwd"
+        android:layout_marginTop="21dp" />
+
+    <TextView
+        android:text="기관 명 "
+        android:textSize="12pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/join_factory"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/join_passwd_edit"
+        android:layout_alignStart="@+id/join_passwd_edit" />
+
+    <Button
+        android:text="회원가입"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/join_join_btn"
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/join_factory_edit"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/join_factory_edit"
+        android:hint="기관 명을 입력하세요"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/join_factory"
+        android:layout_alignStart="@+id/join_factory" />
+
+</RelativeLayout>

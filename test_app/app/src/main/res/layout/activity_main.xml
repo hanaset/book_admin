@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.jeongbin.test.MainActivity">
+
+    <Button
+        android:text="나의 대출 현황"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_myloan_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="반납하기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_return_btn"
+        android:layout_above="@+id/main_myloan_btn"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="대출하기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_loan_btn"
+        android:layout_marginBottom="47dp"
+        android:layout_above="@+id/main_myloan_btn"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="책 검색하기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_search_btn"
+        android:layout_alignBottom="@+id/main_loan_btn"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="47dp" />
+
+    <Button
+        android:text="관리자 회원가입"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_join_btn"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="관리자 로그인"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_login_btn"
+        android:layout_below="@+id/main_join_btn"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="ID"
+        android:textSize="15pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:id="@+id/main_id"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="23dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/main_passwd_edit"
+        android:hint="비밀번호를 입력하세요"
+        android:layout_below="@+id/main_passwd"
+        android:layout_alignStart="@+id/main_passwd"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:text="Password"
+        android:textSize="15pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_passwd"
+        android:layout_below="@+id/main_id_edit"
+        android:layout_alignStart="@+id/main_id_edit"
+        android:layout_marginTop="13dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/main_id_edit"
+        android:hint="아이디를 입력하세요"
+        android:layout_below="@+id/main_id"
+        android:layout_alignStart="@+id/main_id"
+        android:layout_marginTop="11dp" />
+
+</RelativeLayout>
