@@ -22,6 +22,7 @@ import java.net.MalformedURLException;
 
 public class LoginActivity extends AppCompatActivity {
     String id, factory;
+    String ISBN = null;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                     integrator.setBeepEnabled(false);
                     integrator.setBarcodeImageEnabled(false);
                     integrator.initiateScan();
+
                 }
             });
 
@@ -91,7 +93,11 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show();
             }else{
                 Log.d("LoginActivity", "Scanned");
+                ISBN = result.getContents();
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_SHORT).show();
+                Intent book_add_intent = new Intent(LoginActivity.this, BookaddActivity.class);
+                book_add_intent.putExtra("ISBN", ISBN);
+                startActivity(book_add_intent);
             }
         }else{
             super.onActivityResult(requestCode, resultCode, data);

@@ -23,6 +23,7 @@
         <activity android:name=".MyloanActivity"></activity>
         <activity android:name=".ReturnActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".BookaddActivity"></activity>
     </application>
 
 </manifest>

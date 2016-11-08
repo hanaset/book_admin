@@ -19,14 +19,15 @@
     ISBN VARCHAR(30),
     author VARCHAR(30),
     publisher VARCHAR(30),
-    content VARCHAR(200),
+    content VARCHAR(250),
     loan_date DATE,
     return_date DATE,
     num INT(6),
     loan INT(6),
     loan_call INT(6),
     return_call INT(6),
-    phone VARCHAR(20)
+    phone VARCHAR(20),
+    image VARCHAR(300)
     )";
 
     $result1 = $conn->query($sql1);
