@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="대출 현황"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="50dp"
+        android:id="@+id/login_loan_text" />
+
+    <TextView
+        android:text="대출 현황"
+        android:textSize="12pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_loan_text"
+        android:layout_alignStart="@+id/login_loan_text"
+        android:id="@+id/login_loan_view" />
+
+    <TextView
+        android:text="대출 요청 현황"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_loan_view"
+        android:layout_alignStart="@+id/login_loan_view"
+        android:id="@+id/login_loan_call_text" />
+
+    <TextView
+        android:text="대출 요쳥 현황"
+        android:textSize="12pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_loan_call_text"
+        android:layout_alignStart="@+id/login_loan_call_text"
+        android:id="@+id/login_loar_call_view" />
+
+    <TextView
+        android:text="반납 요청 현황"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_loar_call_view"
+        android:layout_alignStart="@+id/login_loar_call_view"
+        android:id="@+id/login_return_text" />
+
+    <TextView
+        android:text="반납 요청 현황"
+        android:textSize="12pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_return_text"
+        android:layout_alignStart="@+id/login_return_text"
+        android:id="@+id/login_return_view" />
+</RelativeLayout>

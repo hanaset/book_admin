@@ -23,7 +23,10 @@
     loan_date DATE,
     return_date DATE,
     num INT(6),
-    remain_num INT(6)
+    loan INT(6),
+    loan_call INT(6),
+    return_call INT(6),
+    phone VARCHAR(20)
     )";
 
     $result1 = $conn->query($sql1);
