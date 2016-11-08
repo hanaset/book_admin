@@ -34,6 +34,7 @@ public class PHPRequest {
 
     public String PhPjoin(final String id, final String passwd, final String factory) {
         try {
+
             String postData = "id=" + id + "&" + "passwd=" + passwd + "&" + "factory=" + factory;
             HttpURLConnection conn = (HttpURLConnection)url.openConnection();
             conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");

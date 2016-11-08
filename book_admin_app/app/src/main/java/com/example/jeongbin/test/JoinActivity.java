@@ -27,6 +27,7 @@ public class JoinActivity extends AppCompatActivity {
         passwd = (EditText)findViewById(R.id.join_passwd_edit);
         factory = (EditText)findViewById(R.id.join_factory_edit);
 
+
         Button join_btn = (Button)findViewById(R.id.join_join_btn);
         join_btn.setOnClickListener(new View.OnClickListener() {
             @Override

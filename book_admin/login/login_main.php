@@ -6,7 +6,7 @@
 		die("Connection failed: ".$conn->connect_error);
 	}
 
-	$id = "b183523";
+	$id = $_POST['id'];
 	$loan = 0;
 	$loan_call = 0;
 	$return_call = 0;

@@ -13,7 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/join_join_confirm"
-        android:layout_above="@+id/join_id_edit"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="23dp"
         android:layout_alignTop="@+id/join_id" />
@@ -50,17 +49,6 @@
         android:layout_alignStart="@+id/join_id_edit"
         android:layout_marginTop="23dp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/join_passwd_edit"
-        android:hint="영문,숫자 8~12글자"
-        android:layout_below="@+id/join_passwd"
-        android:layout_alignStart="@+id/join_passwd"
-        android:layout_marginTop="21dp" />
-
     <TextView
         android:text="기관 명 "
         android:textSize="12pt"
@@ -90,5 +78,16 @@
         android:layout_marginTop="21dp"
         android:layout_below="@+id/join_factory"
         android:layout_alignStart="@+id/join_factory" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/join_passwd_edit"
+        android:hint="영문,숫자 6~12글자"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/join_passwd"
+        android:layout_alignStart="@+id/join_passwd" />
 
 </RelativeLayout>
