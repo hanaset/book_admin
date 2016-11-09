@@ -13,7 +13,7 @@
 	$author = $_POST['author'];
 	$publisher = $_POST['publisher'];
 	$content = $_POST['content'];
-	$img = $_POST['img'];;
+	$img = $_POST['img'];
 
 	$num = 1;
 

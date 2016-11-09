@@ -42,7 +42,7 @@
         android:ems="10"
         android:layout_marginTop="18dp"
         android:id="@+id/myloan_phone_edit"
-        android:hint="XXX-XXXX-XXXX"
+        android:hint="01012341234"
         android:layout_below="@+id/myloan_phone"
         android:layout_alignStart="@+id/myloan_phone" />
 

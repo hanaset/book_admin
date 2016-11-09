@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="책 이름"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_image"
+        android:layout_toEndOf="@+id/info_image"
+        android:layout_marginStart="11dp"
+        android:id="@+id/info_book_name_text" />
+
+    <TextView
+        android:text="책이름이당"
+        android:textSize="10pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/info_book_name"
+        android:layout_below="@+id/info_book_name_text"
+        android:layout_alignStart="@+id/info_book_name_text" />
+
+    <TextView
+        android:text="저자"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_author_text"
+        android:layout_below="@+id/info_book_name"
+        android:layout_alignStart="@+id/info_book_name"
+        android:layout_marginTop="11dp" />
+
+    <TextView
+        android:text="저자지롱"
+        android:textSize="10pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info_author_text"
+        android:layout_alignStart="@+id/info_author_text"
+        android:layout_marginTop="10dp"
+        android:id="@+id/info_author" />
+
+    <TextView
+        android:text="출판사"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info_author"
+        android:layout_alignStart="@+id/info_author"
+        android:layout_marginTop="10dp"
+        android:id="@+id/info_publisher_text" />
+
+    <TextView
+        android:text="여기가출판사"
+        android:textSize="10pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info_publisher_text"
+        android:layout_alignStart="@+id/info_publisher_text"
+        android:layout_marginTop="11dp"
+        android:id="@+id/info_publisher" />
+
+    <TextView
+        android:text="대출자"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info_image"
+        android:layout_alignStart="@+id/info_image"
+        android:layout_marginTop="11dp"
+        android:id="@+id/info_loan_text" />
+
+    <TextView
+        android:text="안알랴줌"
+        android:textSize="10pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info_loan_text"
+        android:layout_alignStart="@+id/info_loan_text"
+        android:layout_marginTop="10dp"
+        android:id="@+id/info_loan_name" />
+
+    <TextView
+        android:text="대출 기간"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info_loan_name"
+        android:layout_alignStart="@+id/info_loan_name"
+        android:layout_marginTop="11dp"
+        android:id="@+id/info_time_text" />
+
+    <TextView
+        android:text="1994-05-06 ~ 2016-11-10"
+        android:textSize="10pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info_time_text"
+        android:layout_alignStart="@+id/info_time_text"
+        android:layout_marginTop="11dp"
+        android:id="@+id/info_time" />
+
+    <TextView
+        android:text="고유번호"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_book_num"
+        android:layout_above="@+id/info_book_name"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="12dp" />
+
+    <TextView
+        android:text="연락처"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info_time"
+        android:layout_alignStart="@+id/info_time"
+        android:layout_marginTop="10dp"
+        android:id="@+id/info_phone_text" />
+
+    <TextView
+        android:text="010-1234-1234"
+        android:textSize="10pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_phone"
+        android:layout_below="@+id/info_phone_text"
+        android:layout_alignStart="@+id/info_phone_text"
+        android:layout_marginTop="10dp" />
+
+    <ImageView
+        android:layout_width="150dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/info_image"
+        android:layout_height="200dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:text="반납 문자 \n보내기"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/info_call_btn"
+            android:layout_weight="0.30" />
+
+        <Button
+            android:text="히든 버튼"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/info_hidden_btn"
+            android:layout_weight="0.30" />
+
+        <Button
+            android:text="책 삭제"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/info_book_del_btn"
+            android:layout_weight="0.30" />
+
+    </LinearLayout>
+
+</RelativeLayout>

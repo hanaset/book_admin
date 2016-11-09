@@ -23,13 +23,10 @@
     loan_date DATE,
     return_date DATE,
     num INT(6),
-    loan INT(6),
-    loan_call INT(6),
-    return_call INT(6),
+    state_num INT(6),
     image VARCHAR(1000),
     phone VARCHAR(20),
-    name VARCHAR(20),
-    birthday VARCHAR(20)
+    name VARCHAR(20)
     )";
 
     $result1 = $conn->query($sql1);

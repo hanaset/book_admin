@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -37,8 +39,9 @@ public class BooklistActivity extends AppCompatActivity {
 
         Intent pre_intent = getIntent();
         id = pre_intent.getExtras().getString("id");
+        final String user = id;
 
-        bookList = new ArrayList<HashMap<String,String>>();
+        bookList = new ArrayList<>();
 
         try{
             PHPRequest request = new PHPRequest("http://114.70.93.130/book_admin/login/book/book_list.php");
@@ -53,37 +56,59 @@ public class BooklistActivity extends AppCompatActivity {
                     String book_name = c.getString("book_name");
                     String author = c.getString("author");
                     String publisher = c.getString("publisher");
-                    String loan = c.getString("loan");
-                    String loan_call = c.getString("loan_call");
-                    String return_call = c.getString("return_call");
+                    String state_num = c.getString("state_num");
+                    String num = c.getString("num");
 
-                    HashMap<String, String> books = new HashMap<String, String>();
+                    HashMap<String, String> books = new HashMap<>();
 
                     books.put("book_name", book_name);
                     books.put("author", author);
                     books.put("publisher", publisher);
+                    books.put("num", num);
 
                     String state;
 
-                    if(loan.equals("1"))
+                    if(state_num.equals("1"))
                         state = "대출 중";
-                    else if(loan_call.equals("1"))
+                    else if(state_num.equals("2"))
                         state = "대출 대기 중";
-                    else if(return_call.equals("1"))
+                    else if(state_num.equals("3"))
                         state = "반납 대기 중";
                     else
                         state = "보유 중";
 
                     books.put("state",state);
+                    books.put("state_num",state_num);
                     bookList.add(books);
                 }
 
-                ListAdapter adapter = new SimpleAdapter(BooklistActivity.this, bookList, R.layout.item_book_list,
-                        new String[]{"book_name","author","publisher","state"},
-                        new int[]{R.id.book_list_name, R.id.book_list_author, R.id.book_list_publisher, R.id.book_list_state});
+                if(bookList.size() == 0)
+                {
+                    setContentView(R.layout.activity_notpage);
+                }
+                else {
+                    ListAdapter adapter = new SimpleAdapter(BooklistActivity.this, bookList, R.layout.item_book_list,
+                            new String[]{"book_name","author","publisher","state"},
+                            new int[]{R.id.book_list_name, R.id.book_list_author, R.id.book_list_publisher, R.id.book_list_state});
 
-                list = (ListView)findViewById(R.id.book_list_listview);
-                list.setAdapter(adapter);
+                    list = (ListView)findViewById(R.id.book_list_listview);
+                    list.setAdapter(adapter);
+
+                    list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            HashMap<String, String> books = bookList.get(position);
+                            Intent item_intent = new Intent(BooklistActivity.this, BookinfoActivity.class);
+                            item_intent.putExtra("id",user);
+                            item_intent.putExtra("book_name",books.get("book_name"));
+                            item_intent.putExtra("num",books.get("num"));
+                            item_intent.putExtra("state_num",books.get("state_num"));
+                            startActivity(item_intent);
+                        }
+                    });
+                }
+
+
 
             }catch(JSONException e){
                 e.printStackTrace();

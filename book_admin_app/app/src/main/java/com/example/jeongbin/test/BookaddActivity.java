@@ -62,7 +62,6 @@ public class BookaddActivity extends AppCompatActivity {
                     content_text.setText(content);
 
                     new DownloadImageTask((ImageView)findViewById(R.id.add_book_image)).execute(img_url);
-
                 }
             }
         };

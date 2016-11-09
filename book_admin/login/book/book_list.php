@@ -16,7 +16,7 @@
 
 	if($result->num_rows > 0){
 		while($row = $result->fetch_assoc()){
-			array_push($text, array('book_name'=>$row["book_name"],'author'=>$row["author"], 'publisher'=>$row["publisher"], 'loan'=>$row["loan"], 'loan_call'=>$row["loan_call"],'return_call'=>$row["return_call"]));
+			array_push($text, array('book_name'=>$row["book_name"],'author'=>$row["author"], 'publisher'=>$row["publisher"], 'state_num'=>$row["state_num"], 'num'=>$row["num"]));
 		}
 	}
 

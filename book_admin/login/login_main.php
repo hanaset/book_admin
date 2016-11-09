@@ -11,7 +11,7 @@
 	$loan_call = 0;
 	$return_call = 0;
 
-	$sql_loan = "SELECT *FROM ".$id." WHERE loan > 0";
+	$sql_loan = "SELECT *FROM ".$id." WHERE state_num = 1";
 	$result_loan = $conn->query($sql_loan);
 
 	if($result_loan->num_rows > 0)
@@ -26,7 +26,7 @@
 
 	echo ",";
 
-	$sql_loan_call = "SELECT *FROM ".$id." WHERE loan_call > 0";
+	$sql_loan_call = "SELECT *FROM ".$id." WHERE state_num = 2";
 	$result_loan_call = $conn->query($sql_loan_call);
 
 	if($result_loan_call->num_rows > 0)
@@ -43,7 +43,7 @@
 
 	echo ",";
 
-	$sql_return_call = "SELECT *FROM ".$id." WHERE return_call > 0";
+	$sql_return_call = "SELECT *FROM ".$id." WHERE state_num = 3";
 	$result_return_call = $conn->query($sql_return_call);
 
 	if($result_return_call->num_rows > 0){

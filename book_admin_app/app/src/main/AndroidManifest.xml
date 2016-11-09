@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jeongbin.test">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:allowBackup="true"
@@ -26,6 +29,7 @@
         <activity android:name=".BookaddActivity"></activity>
         <activity android:name=".BookadminActivity"></activity>
         <activity android:name=".BooklistActivity"></activity>
+        <activity android:name=".BookinfoActivity"></activity>
     </application>
 
 </manifest>
