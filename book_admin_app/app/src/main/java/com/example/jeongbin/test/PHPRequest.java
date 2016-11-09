@@ -53,6 +53,29 @@ public class PHPRequest {
             Log.i("PHPRequest", "request was failed.");
             return null;
         }
+
+    }
+    public String PhPbook(final String id, final String book_name, final String num, final String state_num){
+        try {
+            String postData = "id=" + id + "&" + "book_name=" + book_name + "&" + "num=" + num + "&state_num="+state_num;
+            HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            conn.setRequestMethod("POST");
+            conn.setConnectTimeout(5000);
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
+            OutputStream outputStream = conn.getOutputStream();
+            outputStream.write(postData.getBytes("UTF-8"));
+            outputStream.flush();
+            outputStream.close();
+            String result = readStream(conn.getInputStream());
+            conn.disconnect();
+            return result;
+        }
+        catch (Exception e) {
+            Log.i("PHPRequest", "request was failed.");
+            return null;
+        }
     }
 
     public String PhPjoin(final String id, final String passwd, final String factory) {

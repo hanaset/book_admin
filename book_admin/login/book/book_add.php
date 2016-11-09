@@ -23,7 +23,10 @@
 	if($result->num_rows > 0)
 	{
 		while($row = $result->fetch_assoc()){
-			$num++;
+			if($num < $row["num"])
+			{
+				$num = $row["num"]+1;
+			}
 		}
 	}
 

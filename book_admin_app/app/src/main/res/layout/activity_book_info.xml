@@ -167,4 +167,12 @@
 
     </LinearLayout>
 
+    <TextView
+        android:text="고유번호 : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_book_num"
+        android:layout_toStartOf="@+id/info_book_num"
+        android:id="@+id/info_book_num_text" />
+
 </RelativeLayout>

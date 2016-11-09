@@ -96,7 +96,7 @@ public class BookinfoActivity extends AppCompatActivity {
                     name_tv.setText(loan_name);
                     time_tv.setText(loan_date + " ~ " + return_date);
                     phone_tv.setText(phone);
-                    hidden_btn.setText("반납 하기");
+                    hidden_btn.setText("뒤로 가기");
 
                 }else if(state_num.equals("2") || state_num.equals("3")){
                     name_tv.setText(loan_name);
@@ -108,7 +108,7 @@ public class BookinfoActivity extends AppCompatActivity {
                     name_tv.setText("대출 중이 아닙니다.");
                     time_tv.setText("대출 중이 아닙니다.");
                     phone_tv.setText("대출 중이 아닙니다.");
-                    hidden_btn.setText("대출 하기");
+                    hidden_btn.setText("뒤로 가기");
                 }
 
                 new DownloadImageTask((ImageView)findViewById(R.id.info_image)).execute(img_url);
@@ -122,6 +122,51 @@ public class BookinfoActivity extends AppCompatActivity {
                         }
                         else{
                             Toast.makeText(getApplication(),"대출 중이 아닙니다.",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                hidden_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(state_num.equals("1")){
+                            finish();
+                        }else if(state_num.equals("2") || state_num.equals("3")){
+                            try{
+                                PHPRequest request1 = new PHPRequest("http://114.70.93.130/book_admin/login/book/book_state_modity.php");
+                                String result1 = request1.PhPbook(id, book_name, num, state_num);
+
+                                if(result1.equals("1")) {
+                                    Toast.makeText(getApplication(), "성공적으로 처리되었습니다.", Toast.LENGTH_SHORT).show();
+                                    finish();
+                                }
+                                else
+                                    Toast.makeText(getApplication(),"요청 처리에 실패하였습니다.",Toast.LENGTH_SHORT).show();
+
+                            }catch(MalformedURLException e){
+                                e.printStackTrace();
+                            }
+                        }else{
+                            finish();
+                        }
+                    }
+                });
+
+                del_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        try{
+                            PHPRequest request2 = new PHPRequest("http://114.70.93.130/book_admin/login/book/book_del.php");
+                            String result2 = request2.PhPbook(id, book_name, num);
+
+                            if(result2.equals("1")){
+                                Toast.makeText(getApplication(), "책을 삭제하였습니다.", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }else{
+                                Toast.makeText(getApplication(),"책을 삭제하지 못하였습니다.",Toast.LENGTH_SHORT).show();;
+                            }
+                        }catch (MalformedURLException e){
+                            e.printStackTrace();
                         }
                     }
                 });

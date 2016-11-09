@@ -4,7 +4,7 @@
 	$conn = new mysqli("114.70.93.130", "root", "wjdqls56", "book_admin");
 // Check connection
 	if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+   		die("Connection failed: " . $conn->connect_error);
 	} 
 
 	$id = $_POST['id'];
