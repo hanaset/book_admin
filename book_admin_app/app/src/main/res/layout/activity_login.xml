@@ -59,11 +59,19 @@
         android:layout_marginTop="10dp" />
 
     <Button
+        android:text="반납 요청 현황"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_return_state_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
         android:text="대출 요청 현황 확인"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/login_loancall_state_btn"
-        android:layout_below="@+id/login_loan_state_btn"
+        android:layout_above="@+id/login_return_state_btn"
         android:layout_alignParentStart="true" />
 
     <Button
@@ -71,31 +79,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/login_loan_state_btn"
-        android:layout_below="@+id/login_book_del_btn"
+        android:layout_above="@+id/login_loancall_state_btn"
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="책 삭제"
+        android:text="책 관리"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/login_book_del_btn"
-        android:layout_below="@+id/login_book_add_btn"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="반납 요청 현황"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_loancall_state_btn"
-        android:layout_alignParentStart="true"
-        android:id="@+id/login_return_state_btn" />
-
-    <Button
-        android:text="책 추가"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="54dp"
-        android:id="@+id/login_book_add_btn"
-        android:layout_below="@+id/login_return_view"
+        android:id="@+id/login_book_admin_btn"
+        android:layout_above="@+id/login_loan_state_btn"
         android:layout_alignParentStart="true" />
 </RelativeLayout>

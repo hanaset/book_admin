@@ -42,7 +42,7 @@
         android:ems="10"
         android:layout_marginTop="18dp"
         android:id="@+id/myloan_phone_edit"
-        android:hint="-빼고 입력하세요"
+        android:hint="XXX-XXXX-XXXX"
         android:layout_below="@+id/myloan_phone"
         android:layout_alignStart="@+id/myloan_phone" />
 
@@ -56,15 +56,6 @@
         android:layout_below="@+id/myloan_birthday_edit"
         android:layout_alignStart="@+id/myloan_birthday_edit" />
 
-    <Button
-        android:text="대출현황 검색"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/myloan_search_btn"
-        android:layout_marginBottom="42dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,4 +66,12 @@
         android:layout_below="@+id/myloan_birthday"
         android:layout_alignStart="@+id/myloan_birthday"
         android:layout_marginTop="10dp" />
+
+    <Button
+        android:text="대출현황 검색"
+        android:layout_width="match_parent"
+        android:id="@+id/myloan_search_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="100dp" />
 </RelativeLayout>

@@ -15,19 +15,21 @@
     $result = $conn->query($sql);
 
     $sql1 = "CREATE TABLE ".$id."(
-    book_name VARCHAR(50),
-    ISBN VARCHAR(30),
-    author VARCHAR(30),
-    publisher VARCHAR(30),
-    content VARCHAR(250),
+    book_name VARCHAR(100),
+    ISBN VARCHAR(100),
+    author VARCHAR(100),
+    publisher VARCHAR(100),
+    content VARCHAR(2000),
     loan_date DATE,
     return_date DATE,
     num INT(6),
     loan INT(6),
     loan_call INT(6),
     return_call INT(6),
+    image VARCHAR(1000),
     phone VARCHAR(20),
-    image VARCHAR(300)
+    name VARCHAR(20),
+    birthday VARCHAR(20)
     )";
 
     $result1 = $conn->query($sql1);

@@ -59,15 +59,6 @@
         android:layout_below="@+id/join_passwd_edit"
         android:layout_alignStart="@+id/join_passwd_edit" />
 
-    <Button
-        android:text="회원가입"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/join_join_btn"
-        android:layout_marginTop="41dp"
-        android:layout_below="@+id/join_factory_edit"
-        android:layout_centerHorizontal="true" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,5 +80,13 @@
         android:layout_marginTop="21dp"
         android:layout_below="@+id/join_passwd"
         android:layout_alignStart="@+id/join_passwd" />
+
+    <Button
+        android:text="회원가입"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/join_join_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

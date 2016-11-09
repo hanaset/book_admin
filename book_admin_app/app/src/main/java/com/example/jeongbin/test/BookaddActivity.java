@@ -10,8 +10,11 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -19,6 +22,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 
 /**
  * Created by JeongBin on 2016-11-09.
@@ -28,6 +32,7 @@ public class BookaddActivity extends AppCompatActivity {
     String book_url;
     String search_url = "http://book.naver.com/search/search.nhn?sm=sta_hty.book&sug=&where=nexearch&query=";
     String book_name, author, publishter, content, img_url;
+    String id, ISBN;
 
     public static Handler handler = null;
 
@@ -36,6 +41,10 @@ public class BookaddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_add);
         NetworkUtil.setNetworkPolicy();
+
+        Intent intent = getIntent();
+        id = intent.getExtras().getString("id");
+        ISBN = intent.getExtras().getString("ISBN");
 
         handler = new Handler(){
             @Override
@@ -63,6 +72,35 @@ public class BookaddActivity extends AppCompatActivity {
         search_url += pre_intent.getExtras().getString("ISBN");
         JsoupAsyncTask jsoupAsyncTask = new JsoupAsyncTask();
         jsoupAsyncTask.execute();
+
+        Button add = (Button)findViewById(R.id.add_confirm);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try{
+                    PHPRequest request = new PHPRequest("http://114.70.93.130/book_admin/login/book_add.php");
+                    String result = request.Phpjoin(id, book_name, author, publishter, content, img_url, ISBN);
+                    if(result.equals("-1")){
+                        Toast.makeText(getApplication(), "책 추가에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(getApplication(), "책을 추가하였습니다.",Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+
+                }catch (MalformedURLException e){
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+        Button cancel = (Button)findViewById(R.id.add_cancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
@@ -105,7 +143,7 @@ public class BookaddActivity extends AppCompatActivity {
                 doc = Jsoup.connect(book_url).get();
                 links = doc.select("[property*=og:image]");
 
-                img_url = links.attr("contetnt");
+                img_url = links.attr("content");
 
 
             } catch (IOException e) {

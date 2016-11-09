@@ -101,6 +101,29 @@ public class PHPRequest {
             return null;
         }
     }
+
+    public String Phpjoin(final String id, final String book_name, final String author, final String publisher, final String content, final String img, final String ISBN){
+        try {
+            String postData = "id=" + id + "&book_name=" + book_name + "&author=" + author + "&publisher=" + publisher + "&content=" + content + "&img=" + img + "&ISBN=" + ISBN;
+            HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            conn.setRequestMethod("POST");
+            conn.setConnectTimeout(5000);
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
+            OutputStream outputStream = conn.getOutputStream();
+            outputStream.write(postData.getBytes("UTF-8"));
+            outputStream.flush();
+            outputStream.close();
+            String result = readStream(conn.getInputStream());
+            conn.disconnect();
+            return result;
+        }
+        catch (Exception e) {
+            Log.i("PHPRequest", "request was failed.");
+            return null;
+        }
+    }
 }
 
 

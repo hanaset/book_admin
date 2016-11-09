@@ -4,25 +4,18 @@ package com.example.jeongbin.test;
  * Created by JeongBin on 2016-11-02.
  */
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 
 import java.net.MalformedURLException;
 
 public class LoginActivity extends AppCompatActivity {
     String id, factory;
-    String ISBN = null;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         TextView loan_call_num = (TextView)findViewById(R.id.login_loan_call_view);
         TextView return_num = (TextView)findViewById(R.id.login_return_view);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         id = intent.getExtras().getString("id");
         factory = intent.getExtras().getString("factory");
 
@@ -63,19 +56,14 @@ public class LoginActivity extends AppCompatActivity {
                 return_num.setText(book_num[2]+" 개가 있습니다.");
             }
 
-            Button book_add_btn = (Button)findViewById(R.id.login_book_add_btn);
-            final Activity activity = this;
+            Button book_add_btn = (Button)findViewById(R.id.login_book_admin_btn);
             book_add_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    IntentIntegrator integrator = new IntentIntegrator(activity);
-                    integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
-                    integrator.setPrompt("Scan");
-                    integrator.setCameraId(0);
-                    integrator.setBeepEnabled(false);
-                    integrator.setBarcodeImageEnabled(false);
-                    integrator.initiateScan();
-
+                    Intent admin_intent = new Intent(LoginActivity.this, BookadminActivity.class);
+                    admin_intent.putExtra("id",id);
+                    admin_intent.putExtra("factory",factory);
+                    startActivity(admin_intent);
                 }
             });
 
@@ -84,23 +72,5 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if(result != null){
-            if(result.getContents() == null){
-                Log.d("LoginActivity", "Cancelled scan");
-                Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show();
-            }else{
-                Log.d("LoginActivity", "Scanned");
-                ISBN = result.getContents();
-                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_SHORT).show();
-                Intent book_add_intent = new Intent(LoginActivity.this, BookaddActivity.class);
-                book_add_intent.putExtra("ISBN", ISBN);
-                startActivity(book_add_intent);
-            }
-        }else{
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-    }
+
 }

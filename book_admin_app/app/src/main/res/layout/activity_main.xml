@@ -11,40 +11,6 @@
     tools:context="com.example.jeongbin.test.MainActivity">
 
     <Button
-        android:text="나의 대출 현황"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_myloan_btn"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="반납하기"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_return_btn"
-        android:layout_above="@+id/main_myloan_btn"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="대출하기"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_loan_btn"
-        android:layout_marginBottom="47dp"
-        android:layout_above="@+id/main_myloan_btn"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="책 검색하기"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_search_btn"
-        android:layout_alignBottom="@+id/main_loan_btn"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="47dp" />
-
-    <Button
         android:text="관리자 회원가입"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -102,5 +68,37 @@
         android:layout_below="@+id/main_id"
         android:layout_alignStart="@+id/main_id"
         android:layout_marginTop="11dp" />
+
+    <Button
+        android:text="나의 대출 현황"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_myloan_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="반납하기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_return_btn"
+        android:layout_above="@+id/main_myloan_btn"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="대출하기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_loan_btn"
+        android:layout_above="@+id/main_return_btn"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="책 검색하기"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_search_btn"
+        android:layout_above="@+id/main_loan_btn"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
