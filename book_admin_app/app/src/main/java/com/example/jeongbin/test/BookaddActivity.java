@@ -78,7 +78,7 @@ public class BookaddActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try{
-                    PHPRequest request = new PHPRequest("http://114.70.93.130/book_admin/login/book_add.php");
+                    PHPRequest request = new PHPRequest("http://114.70.93.130/book_admin/login/book/book_add.php");
                     String result = request.Phpjoin(id, book_name, author, publishter, content, img_url, ISBN);
                     if(result.equals("-1")){
                         Toast.makeText(getApplication(), "책 추가에 실패하였습니다.", Toast.LENGTH_SHORT).show();

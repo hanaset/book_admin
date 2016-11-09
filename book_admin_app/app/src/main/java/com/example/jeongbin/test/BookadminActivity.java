@@ -43,6 +43,16 @@ public class BookadminActivity extends AppCompatActivity {
                 integrator.initiateScan();
             }
         });
+
+        final Button book_list = (Button)findViewById(R.id.admin_list_btn);
+        book_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent book_list_intent = new Intent(BookadminActivity.this, BooklistActivity.class);
+                book_list_intent.putExtra("id",id);
+                startActivity(book_list_intent);
+            }
+        });
     }
     ///////////////////////////////////////////////////////////////////////////////////////////
 

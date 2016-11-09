@@ -25,6 +25,7 @@
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".BookaddActivity"></activity>
         <activity android:name=".BookadminActivity"></activity>
+        <activity android:name=".BooklistActivity"></activity>
     </application>
 
 </manifest>
