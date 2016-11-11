@@ -20,42 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         NetworkUtil.setNetworkPolicy();
 
-        Button BSearch_btn = (Button) findViewById(R.id.main_search_btn); // 책검색 버튼
-        BSearch_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent search_intent = new Intent(MainActivity.this, SearchActivity.class);
-                startActivity(search_intent);
-            }
-
-        });
-
-        Button Bloan_btn = (Button)findViewById(R.id.main_loan_btn); //  대출 버튼
-        Bloan_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent loan_intent = new Intent(MainActivity.this, LoanActivity.class);
-                startActivity(loan_intent);
-            }
-        });
-
-        Button Breturn_btn = (Button)findViewById(R.id.main_return_btn); // 반납 버튼
-        Breturn_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent return_intent = new Intent(MainActivity.this, ReturnActivity.class);
-                startActivity(return_intent);
-            }
-        });
-
-        Button myloan_btn = (Button)findViewById(R.id.main_myloan_btn); // 나의 대출 현황 버튼
-        myloan_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myloan_intent = new Intent(MainActivity.this, MyloanActivity.class);
-                startActivity(myloan_intent);
-            }
-        });
 
         Button join_btn = (Button)findViewById(R.id.main_join_btn); // 회원 가입 버튼
         join_btn.setOnClickListener(new View.OnClickListener() {

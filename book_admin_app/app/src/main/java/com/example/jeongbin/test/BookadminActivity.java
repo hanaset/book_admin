@@ -44,13 +44,23 @@ public class BookadminActivity extends AppCompatActivity {
             }
         });
 
-        final Button book_list = (Button)findViewById(R.id.admin_list_btn);
+        Button book_list = (Button)findViewById(R.id.admin_list_btn);
         book_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent book_list_intent = new Intent(BookadminActivity.this, BooklistActivity.class);
                 book_list_intent.putExtra("id",id);
                 startActivity(book_list_intent);
+            }
+        });
+
+        Button book_search = (Button)findViewById(R.id.admin_search_btn);
+        book_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent search_intent = new Intent(BookadminActivity.this, SearchActivity.class);
+                search_intent.putExtra("id",id);
+                startActivity(search_intent);
             }
         });
     }

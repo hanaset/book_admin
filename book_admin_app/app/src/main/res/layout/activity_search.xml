@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1">
+    android:layout_height="match_parent">
 
+    <TextView
+        android:text="검색 내용"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/search_text" />
+
+    <Spinner
+        android:layout_height="wrap_content"
+        android:id="@+id/search_spinner"
+        android:layout_width="360dp"
+        android:layout_below="@+id/search_text"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/search_edit_name"
+        android:hint="검색 내용"
+        android:layout_below="@+id/search_spinner"
+        android:layout_alignStart="@+id/search_text" />
+
+    <Button
+        android:text="검색"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_search_btn"
+        android:layout_below="@+id/search_edit_name"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search_search_btn"
+        android:layout_alignParentStart="true">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/book_search_listview" />
+    </LinearLayout>
 </RelativeLayout>

@@ -19,8 +19,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchActivity"
-            android:theme="@style/joinTheme"></activity>
         <activity android:name=".LoanActivity"></activity>
         <activity android:name=".JoinActivity"></activity>
         <activity android:name=".MyloanActivity"></activity>
@@ -30,6 +28,7 @@
         <activity android:name=".BookadminActivity"></activity>
         <activity android:name=".BooklistActivity"></activity>
         <activity android:name=".BookinfoActivity"></activity>
+        <activity android:name=".SearchActivity"></activity>
     </application>
 
 </manifest>

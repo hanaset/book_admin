@@ -78,6 +78,29 @@ public class PHPRequest {
         }
     }
 
+    public String PhPsearch(final String id, final String content, final String kind){
+        try {
+            String postData = "id=" + id + "&" + "content=" + content + "&kind="+ kind;
+            HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            conn.setRequestMethod("POST");
+            conn.setConnectTimeout(5000);
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
+            OutputStream outputStream = conn.getOutputStream();
+            outputStream.write(postData.getBytes("UTF-8"));
+            outputStream.flush();
+            outputStream.close();
+            String result = readStream(conn.getInputStream());
+            conn.disconnect();
+            return result;
+        }
+        catch (Exception e) {
+            Log.i("PHPRequest", "request was failed.");
+            return null;
+        }
+    }
+
     public String PhPjoin(final String id, final String passwd, final String factory) {
         try {
             String postData = "id=" + id + "&" + "passwd=" + passwd + "&" + "factory=" + factory;

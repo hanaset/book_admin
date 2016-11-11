@@ -116,12 +116,15 @@ public class BookinfoActivity extends AppCompatActivity {
                 messge_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(state_num.equals("1")){
+                        if(state_num.equals("1") ){
                             Messenger messenger = new Messenger(getApplicationContext());
                             messenger.sendMessageTo(phone,loan_name+"님의 반납 날짜는 "+return_date+" 입니다.");
+                        }else if(state_num.equals("4")){
+                            Messenger messenger = new Messenger(getApplicationContext());
+                            messenger.sendMessageTo(phone,"반납 날짜가 지났습니다. 빠른 반납 바랍니다.");
                         }
                         else{
-                            Toast.makeText(getApplication(),"대출 중이 아닙니다.",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplication(),"대출 또는 연체 중이 아닙니다.",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

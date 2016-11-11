@@ -74,6 +74,8 @@ public class BooklistActivity extends AppCompatActivity {
                         state = "대출 대기 중";
                     else if(state_num.equals("3"))
                         state = "반납 대기 중";
+                    else if(state_num.equals("4"))
+                        state = "연체 중";
                     else
                         state = "보유 중";
 
