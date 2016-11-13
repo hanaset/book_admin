@@ -8,8 +8,6 @@
 
 	$id = $_POST['id'];
 	$loan = 0;
-	$loan_call = 0;
-	$return_call = 0;
 	$late_call = 0;
 
 	$sql_loan = "SELECT *FROM ".$id." WHERE state_num = 1";
@@ -34,36 +32,6 @@
 	{
 		while($row = $result_loan_call->fetch_assoc())
 		{
-			$loan_call++;
-		}
-
-		echo $loan_call;
-	}
-	else
-		echo "-1";
-
-	echo ",";
-
-	$sql_return_call = "SELECT *FROM ".$id." WHERE state_num = 3";
-	$result_return_call = $conn->query($sql_return_call);
-
-	if($result_return_call->num_rows > 0){
-		while($row = $result_return_call->fetch_assoc()){
-			$return_call++;
-		}
-
-		echo $return_call;
-	}
-	else
-		echo "-1";
-
-	echo ",";
-
-	$sql_late_call = "SELECT *FROM ".$id." WHERE state_num = 4";
-	$result_late_call = $conn->query($sql_late_call);
-
-	if($result_late_call->num_rows > 0){
-		while($row = $result_late_call->fetch_assoc()){
 			$late_call++;
 		}
 
@@ -71,7 +39,6 @@
 	}
 	else
 		echo "-1";
-
 
 
 	$conn->close();

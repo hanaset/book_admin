@@ -63,6 +63,15 @@ public class BookadminActivity extends AppCompatActivity {
                 startActivity(search_intent);
             }
         });
+
+        Button info_modity = (Button)findViewById(R.id.admin_member);
+        info_modity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent info_intent = new Intent(BookadminActivity.this, InfomodityActivity.class);
+                startActivity(info_intent);
+            }
+        });
     }
     ///////////////////////////////////////////////////////////////////////////////////////////
 

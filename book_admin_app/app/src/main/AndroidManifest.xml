@@ -19,16 +19,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoanActivity"></activity>
         <activity android:name=".JoinActivity"></activity>
-        <activity android:name=".MyloanActivity"></activity>
-        <activity android:name=".ReturnActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".BookaddActivity"></activity>
         <activity android:name=".BookadminActivity"></activity>
         <activity android:name=".BooklistActivity"></activity>
         <activity android:name=".BookinfoActivity"></activity>
         <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".InfomodityActivity"></activity>
+        <activity android:name=".ModitiyActivity"></activity>
+        <activity android:name=".ReturnActivity"></activity>
+        <activity android:name=".LoanActivity"></activity>
+        <activity android:name=".StateActivity"></activity>
     </application>
 
 </manifest>

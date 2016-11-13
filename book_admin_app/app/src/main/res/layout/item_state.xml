@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:text="이름"
+        android:textSize="10pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:id="@+id/i_state_name"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="2016-11-11 ~ 2016-11-12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/i_state_loan"
+        android:layout_below="@+id/i_state_name"
+        android:layout_alignStart="@+id/i_state_name" />
+
+    <TextView
+        android:text="책이름"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/i_state_book"
+        android:layout_alignBottom="@+id/i_state_name"
+        android:layout_alignEnd="@+id/i_state_loan" />
+
+    <TextView
+        android:text="상태"
+        android:textSize="12pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/i_state_state"
+        android:layout_alignTop="@+id/i_state_book"
+        android:layout_toEndOf="@+id/i_state_loan"
+        android:layout_marginStart="73dp" />
+</RelativeLayout>

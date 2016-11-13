@@ -13,42 +13,6 @@
         android:id="@+id/login_loan_view" />
 
     <TextView
-        android:text="대출 요쳥 현황"
-        android:textSize="12pt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_loan_call_text"
-        android:layout_alignStart="@+id/login_loan_call_text"
-        android:id="@+id/login_loan_call_view" />
-
-    <TextView
-        android:text="반납 요청 현황"
-        android:textSize="12pt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_return_text"
-        android:layout_alignStart="@+id/login_return_text"
-        android:id="@+id/login_return_view" />
-
-    <TextView
-        android:text="대출 요청 현황"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/login_loan_call_text"
-        android:layout_below="@+id/login_loan_view"
-        android:layout_alignStart="@+id/login_loan_view"
-        android:layout_marginTop="11dp" />
-
-    <TextView
-        android:text="반납 요청 현황"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/login_return_text"
-        android:layout_below="@+id/login_loan_call_view"
-        android:layout_alignStart="@+id/login_loan_call_view"
-        android:layout_marginTop="10dp" />
-
-    <TextView
         android:text="대출 현황"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,15 +21,6 @@
         android:id="@+id/login_loan_text"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="연체 현황"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_return_view"
-        android:layout_alignStart="@+id/login_return_view"
-        android:layout_marginTop="10dp"
-        android:id="@+id/login_late_text" />
 
     <TextView
         android:text="연체 현황"
@@ -80,10 +35,10 @@
         android:text="대출 하기"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/login_loancall_state_btn"
+        android:id="@+id/login_loan_btn"
         android:layout_weight="1"
-        android:layout_above="@+id/login_return_state_btn"
-        android:layout_alignStart="@+id/login_return_state_btn" />
+        android:layout_above="@+id/login_return_btn"
+        android:layout_alignStart="@+id/login_return_btn" />
 
     <Button
         android:text="책 관리"
@@ -97,7 +52,7 @@
         android:text="반납하기"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/login_return_state_btn"
+        android:id="@+id/login_return_btn"
         android:layout_weight="1"
         android:layout_above="@+id/login_state_btn"
         android:layout_alignParentEnd="true" />
@@ -110,4 +65,13 @@
         android:layout_marginBottom="48dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="연체 현황"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:id="@+id/login_late_text"
+        android:layout_below="@+id/login_loan_view"
+        android:layout_alignStart="@+id/login_loan_view" />
 </RelativeLayout>

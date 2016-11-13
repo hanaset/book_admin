@@ -17,20 +17,20 @@
 
 	$num = 1;
 
-	$sql = "SELECT *FROM ".$id." WHERE ISBN = ".$ISBN;
+	$sql = "SELECT *FROM ".$id." WHERE ISBN = '".$ISBN."'";
 	$result = $conn->query($sql);
 
 	if($result->num_rows > 0)
 	{
 		while($row = $result->fetch_assoc()){
-			if($num < $row["num"])
+			if($num <= $row["num"])
 			{
 				$num = $row["num"]+1;
 			}
 		}
 	}
 
-	$sql = "INSERT INTO ".$id."(book_name, ISBN, author, publisher, content, num, image) VALUES ('".$book_name."','".$ISBN."','".$author."','".$publisher."','".$content."','".$num."','".$img."')";
+	$sql = "INSERT INTO ".$id."(book_name, ISBN, author, publisher, content, num, image, state_num) VALUES ('".$book_name."','".$ISBN."','".$author."','".$publisher."','".$content."','".$num."','".$img."', 0)";
 
 	$result = $conn->query($sql);
 

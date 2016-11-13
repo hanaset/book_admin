@@ -92,17 +92,11 @@ public class BookinfoActivity extends AppCompatActivity {
                 publisher_tv.setText(publisher);
                 num_tv.setText(num);
 
-                if(state_num.equals("1")){
+                if(state_num.equals("1") || state_num.equals("2")){
                     name_tv.setText(loan_name);
                     time_tv.setText(loan_date + " ~ " + return_date);
                     phone_tv.setText(phone);
                     hidden_btn.setText("뒤로 가기");
-
-                }else if(state_num.equals("2") || state_num.equals("3")){
-                    name_tv.setText(loan_name);
-                    time_tv.setText(loan_date + " ~ " + return_date);
-                    phone_tv.setText(phone);
-                    hidden_btn.setText("요청 수락");
 
                 }else{
                     name_tv.setText("대출 중이 아닙니다.");
@@ -119,7 +113,7 @@ public class BookinfoActivity extends AppCompatActivity {
                         if(state_num.equals("1") ){
                             Messenger messenger = new Messenger(getApplicationContext());
                             messenger.sendMessageTo(phone,loan_name+"님의 반납 날짜는 "+return_date+" 입니다.");
-                        }else if(state_num.equals("4")){
+                        }else if(state_num.equals("2")){
                             Messenger messenger = new Messenger(getApplicationContext());
                             messenger.sendMessageTo(phone,"반납 날짜가 지났습니다. 빠른 반납 바랍니다.");
                         }
@@ -134,21 +128,6 @@ public class BookinfoActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         if(state_num.equals("1")){
                             finish();
-                        }else if(state_num.equals("2") || state_num.equals("3")){
-                            try{
-                                PHPRequest request1 = new PHPRequest("http://114.70.93.130/book_admin/login/book/book_state_modity.php");
-                                String result1 = request1.PhPbook(id, book_name, num, state_num);
-
-                                if(result1.equals("1")) {
-                                    Toast.makeText(getApplication(), "성공적으로 처리되었습니다.", Toast.LENGTH_SHORT).show();
-                                    finish();
-                                }
-                                else
-                                    Toast.makeText(getApplication(),"요청 처리에 실패하였습니다.",Toast.LENGTH_SHORT).show();
-
-                            }catch(MalformedURLException e){
-                                e.printStackTrace();
-                            }
                         }else{
                             finish();
                         }
